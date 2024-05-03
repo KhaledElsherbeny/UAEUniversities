@@ -18,6 +18,8 @@
 		E9335AFD2BE5014E00E583E8 /* UAEUniversitiesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9335AFC2BE5014E00E583E8 /* UAEUniversitiesUITestsLaunchTests.swift */; };
 		E9F22E682BE59CA200539B0E /* NetworkKit in Resources */ = {isa = PBXBuildFile; fileRef = E9F22E672BE59CA200539B0E /* NetworkKit */; };
 		E9F22E6B2BE59CC300539B0E /* NetworkKit in Frameworks */ = {isa = PBXBuildFile; productRef = E9F22E6A2BE59CC300539B0E /* NetworkKit */; };
+		E9F22E722BE5AC0200539B0E /* StorageKit in Resources */ = {isa = PBXBuildFile; fileRef = E9F22E712BE5AC0200539B0E /* StorageKit */; };
+		E9F22E752BE5AC1800539B0E /* StorageKit in Frameworks */ = {isa = PBXBuildFile; productRef = E9F22E742BE5AC1800539B0E /* StorageKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,7 @@
 		E9335AFA2BE5014E00E583E8 /* UAEUniversitiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAEUniversitiesUITests.swift; sourceTree = "<group>"; };
 		E9335AFC2BE5014E00E583E8 /* UAEUniversitiesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAEUniversitiesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E9F22E672BE59CA200539B0E /* NetworkKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkKit; sourceTree = SOURCE_ROOT; };
+		E9F22E712BE5AC0200539B0E /* StorageKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = StorageKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9F22E6B2BE59CC300539B0E /* NetworkKit in Frameworks */,
+				E9F22E752BE5AC1800539B0E /* StorageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +87,7 @@
 		E9335ACD2BE5014C00E583E8 = {
 			isa = PBXGroup;
 			children = (
+				E9F22E712BE5AC0200539B0E /* StorageKit */,
 				E9F22E672BE59CA200539B0E /* NetworkKit */,
 				E9335AD82BE5014C00E583E8 /* UAEUniversities */,
 				E9335AEF2BE5014E00E583E8 /* UAEUniversitiesTests */,
@@ -150,6 +155,7 @@
 			name = UAEUniversities;
 			packageProductDependencies = (
 				E9F22E6A2BE59CC300539B0E /* NetworkKit */,
+				E9F22E742BE5AC1800539B0E /* StorageKit */,
 			);
 			productName = UAEUniversities;
 			productReference = E9335AD62BE5014C00E583E8 /* UAEUniversities.app */;
@@ -224,8 +230,8 @@
 			);
 			mainGroup = E9335ACD2BE5014C00E583E8;
 			packageReferences = (
-				E97E00FD2BE50C1700FF0027 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				E9F22E692BE59CC300539B0E /* XCLocalSwiftPackageReference "NetworkKit" */,
+				E9F22E732BE5AC1800539B0E /* XCLocalSwiftPackageReference "StorageKit" */,
 			);
 			productRefGroup = E9335AD72BE5014C00E583E8 /* Products */;
 			projectDirPath = "";
@@ -245,6 +251,7 @@
 			files = (
 				E9F22E682BE59CA200539B0E /* NetworkKit in Resources */,
 				E9335AE32BE5014E00E583E8 /* Assets.xcassets in Resources */,
+				E9F22E722BE5AC0200539B0E /* StorageKit in Resources */,
 				E9335AE62BE5014E00E583E8 /* Base in Resources */,
 				E9335AE12BE5014C00E583E8 /* Base in Resources */,
 			);
@@ -620,23 +627,20 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = NetworkKit;
 		};
-/* End XCLocalSwiftPackageReference section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		E97E00FD2BE50C1700FF0027 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
+		E9F22E732BE5AC1800539B0E /* XCLocalSwiftPackageReference "StorageKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = StorageKit;
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		E9F22E6A2BE59CC300539B0E /* NetworkKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NetworkKit;
+		};
+		E9F22E742BE5AC1800539B0E /* StorageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = StorageKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
