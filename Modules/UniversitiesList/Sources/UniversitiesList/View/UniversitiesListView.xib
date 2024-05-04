@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UniversitiesListView" customModule="UniversitiesList">
+            <connections>
+                <outlet property="tableView" destination="Jj0-P7-C8Y" id="dfr-3Z-68C"/>
+                <outlet property="view" destination="B2A-ne-Er8" id="xvx-X2-kcC"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="B2A-ne-Er8">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Jj0-P7-C8Y">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <color key="backgroundColor" name="AccentColor"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="jsy-xk-x14"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Jj0-P7-C8Y" firstAttribute="top" secondItem="jsy-xk-x14" secondAttribute="top" id="4BD-1a-MwQ"/>
+                <constraint firstItem="Jj0-P7-C8Y" firstAttribute="trailing" secondItem="jsy-xk-x14" secondAttribute="trailing" id="fL5-R6-2ke"/>
+                <constraint firstItem="Jj0-P7-C8Y" firstAttribute="bottom" secondItem="jsy-xk-x14" secondAttribute="bottom" id="ois-gy-mDv"/>
+                <constraint firstItem="Jj0-P7-C8Y" firstAttribute="leading" secondItem="jsy-xk-x14" secondAttribute="leading" id="vFM-Gb-vrj"/>
+            </constraints>
+            <point key="canvasLocation" x="-54.198473282442748" y="-25.35211267605634"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

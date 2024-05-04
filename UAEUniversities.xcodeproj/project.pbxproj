@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		E9335ADA2BE5014C00E583E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9335AD92BE5014C00E583E8 /* AppDelegate.swift */; };
-		E9335ADC2BE5014C00E583E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9335ADB2BE5014C00E583E8 /* SceneDelegate.swift */; };
 		E9335ADE2BE5014C00E583E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9335ADD2BE5014C00E583E8 /* ViewController.swift */; };
 		E9335AE12BE5014C00E583E8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E9335AE02BE5014C00E583E8 /* Base */; };
 		E9335AE32BE5014E00E583E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9335AE22BE5014E00E583E8 /* Assets.xcassets */; };
@@ -16,22 +15,10 @@
 		E9335AF12BE5014E00E583E8 /* UAEUniversitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9335AF02BE5014E00E583E8 /* UAEUniversitiesTests.swift */; };
 		E9335AFB2BE5014E00E583E8 /* UAEUniversitiesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9335AFA2BE5014E00E583E8 /* UAEUniversitiesUITests.swift */; };
 		E9335AFD2BE5014E00E583E8 /* UAEUniversitiesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9335AFC2BE5014E00E583E8 /* UAEUniversitiesUITestsLaunchTests.swift */; };
-		E9F22E6B2BE59CC300539B0E /* NetworkKit in Frameworks */ = {isa = PBXBuildFile; productRef = E9F22E6A2BE59CC300539B0E /* NetworkKit */; };
-		E9F22E752BE5AC1800539B0E /* StorageKit in Frameworks */ = {isa = PBXBuildFile; productRef = E9F22E742BE5AC1800539B0E /* StorageKit */; };
+		E994916D2BE5D1EA004B023A /* UniversitiesList in Frameworks */ = {isa = PBXBuildFile; productRef = E994916C2BE5D1EA004B023A /* UniversitiesList */; };
+		E9BC08AA2BE5D6D400D38980 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BC08A92BE5D6D400D38980 /* SceneDelegate.swift */; };
 		E9F22E962BE5C71200539B0E /* NetworkKit in Resources */ = {isa = PBXBuildFile; fileRef = E9F22E932BE5C71200539B0E /* NetworkKit */; };
 		E9F22E972BE5C71200539B0E /* StorageKit in Resources */ = {isa = PBXBuildFile; fileRef = E9F22E942BE5C71200539B0E /* StorageKit */; };
-		E9F22E9A2BE5C73500539B0E /* NetworkKit in Frameworks */ = {isa = PBXBuildFile; productRef = E9F22E992BE5C73500539B0E /* NetworkKit */; };
-		E9F22E9D2BE5C74600539B0E /* StorageKit in Frameworks */ = {isa = PBXBuildFile; productRef = E9F22E9C2BE5C74600539B0E /* StorageKit */; };
-		E9F22EB82BE5C9DB00539B0E /* UniversitiesListAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F22EA42BE5C9DB00539B0E /* UniversitiesListAPIDataManager.swift */; };
-		E9F22EB92BE5C9DB00539B0E /* UniversitiesListLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F22EA62BE5C9DB00539B0E /* UniversitiesListLocalDataManager.swift */; };
-		E9F22EBA2BE5C9DB00539B0E /* UniversitiesSearchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F22EA92BE5C9DB00539B0E /* UniversitiesSearchEndpoint.swift */; };
-		E9F22EBB2BE5C9DB00539B0E /* UAEUniversitiesListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F22EAB2BE5C9DB00539B0E /* UAEUniversitiesListItem.swift */; };
-		E9F22EBC2BE5C9DB00539B0E /* UniversitiesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F22EAC2BE5C9DB00539B0E /* UniversitiesListInteractor.swift */; };
-		E9F22EBD2BE5C9DB00539B0E /* UniversitiesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F22EAE2BE5C9DB00539B0E /* UniversitiesListPresenter.swift */; };
-		E9F22EBE2BE5C9DB00539B0E /* UAEUniversitiesListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F22EB02BE5C9DB00539B0E /* UAEUniversitiesListProtocols.swift */; };
-		E9F22EBF2BE5C9DB00539B0E /* UniversitiesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F22EB22BE5C9DB00539B0E /* UniversitiesListView.swift */; };
-		E9F22EC02BE5C9DB00539B0E /* UniversitiesListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9F22EB32BE5C9DB00539B0E /* UniversitiesListView.xib */; };
-		E9F22EC12BE5C9DB00539B0E /* UniversitiesListWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F22EB52BE5C9DB00539B0E /* UniversitiesListWireFrame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +41,6 @@
 /* Begin PBXFileReference section */
 		E9335AD62BE5014C00E583E8 /* UAEUniversities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UAEUniversities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9335AD92BE5014C00E583E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E9335ADB2BE5014C00E583E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E9335ADD2BE5014C00E583E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E9335AE02BE5014C00E583E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E9335AE22BE5014E00E583E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,18 +51,10 @@
 		E9335AF62BE5014E00E583E8 /* UAEUniversitiesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UAEUniversitiesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9335AFA2BE5014E00E583E8 /* UAEUniversitiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAEUniversitiesUITests.swift; sourceTree = "<group>"; };
 		E9335AFC2BE5014E00E583E8 /* UAEUniversitiesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAEUniversitiesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E994916B2BE5D1BE004B023A /* UniversitiesList */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UniversitiesList; sourceTree = "<group>"; };
+		E9BC08A92BE5D6D400D38980 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E9F22E932BE5C71200539B0E /* NetworkKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkKit; sourceTree = "<group>"; };
 		E9F22E942BE5C71200539B0E /* StorageKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = StorageKit; sourceTree = "<group>"; };
-		E9F22EA42BE5C9DB00539B0E /* UniversitiesListAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesListAPIDataManager.swift; sourceTree = "<group>"; };
-		E9F22EA62BE5C9DB00539B0E /* UniversitiesListLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesListLocalDataManager.swift; sourceTree = "<group>"; };
-		E9F22EA92BE5C9DB00539B0E /* UniversitiesSearchEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesSearchEndpoint.swift; sourceTree = "<group>"; };
-		E9F22EAB2BE5C9DB00539B0E /* UAEUniversitiesListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UAEUniversitiesListItem.swift; sourceTree = "<group>"; };
-		E9F22EAC2BE5C9DB00539B0E /* UniversitiesListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesListInteractor.swift; sourceTree = "<group>"; };
-		E9F22EAE2BE5C9DB00539B0E /* UniversitiesListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesListPresenter.swift; sourceTree = "<group>"; };
-		E9F22EB02BE5C9DB00539B0E /* UAEUniversitiesListProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UAEUniversitiesListProtocols.swift; sourceTree = "<group>"; };
-		E9F22EB22BE5C9DB00539B0E /* UniversitiesListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesListView.swift; sourceTree = "<group>"; };
-		E9F22EB32BE5C9DB00539B0E /* UniversitiesListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UniversitiesListView.xib; sourceTree = "<group>"; };
-		E9F22EB52BE5C9DB00539B0E /* UniversitiesListWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesListWireFrame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,10 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9F22E9A2BE5C73500539B0E /* NetworkKit in Frameworks */,
-				E9F22E6B2BE59CC300539B0E /* NetworkKit in Frameworks */,
-				E9F22E752BE5AC1800539B0E /* StorageKit in Frameworks */,
-				E9F22E9D2BE5C74600539B0E /* StorageKit in Frameworks */,
+				E994916D2BE5D1EA004B023A /* UniversitiesList in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,10 +86,11 @@
 		E9335ACD2BE5014C00E583E8 = {
 			isa = PBXGroup;
 			children = (
-				E9F22E952BE5C71200539B0E /* Frameworks */,
+				E9F22EFE2BE5CB1D00539B0E /* Modules */,
 				E9335AD82BE5014C00E583E8 /* UAEUniversities */,
 				E9335AEF2BE5014E00E583E8 /* UAEUniversitiesTests */,
 				E9335AF92BE5014E00E583E8 /* UAEUniversitiesUITests */,
+				E9F22E952BE5C71200539B0E /* Frameworks */,
 				E9335AD72BE5014C00E583E8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -132,14 +108,13 @@
 		E9335AD82BE5014C00E583E8 /* UAEUniversities */ = {
 			isa = PBXGroup;
 			children = (
-				E9F22E922BE5C6AB00539B0E /* Modules */,
 				E9335AD92BE5014C00E583E8 /* AppDelegate.swift */,
-				E9335ADB2BE5014C00E583E8 /* SceneDelegate.swift */,
+				E9BC08A92BE5D6D400D38980 /* SceneDelegate.swift */,
 				E9335ADD2BE5014C00E583E8 /* ViewController.swift */,
 				E9335ADF2BE5014C00E583E8 /* Main.storyboard */,
 				E9335AE22BE5014E00E583E8 /* Assets.xcassets */,
-				E9335AE42BE5014E00E583E8 /* LaunchScreen.storyboard */,
-				E9335AE72BE5014E00E583E8 /* Info.plist */,
+				E9BC08A82BE5D41700D38980 /* Splash */,
+				E9BC08A72BE5D40B00D38980 /* Config */,
 			);
 			path = UAEUniversities;
 			sourceTree = "<group>";
@@ -161,12 +136,20 @@
 			path = UAEUniversitiesUITests;
 			sourceTree = "<group>";
 		};
-		E9F22E922BE5C6AB00539B0E /* Modules */ = {
+		E9BC08A72BE5D40B00D38980 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				E9F22EB72BE5C9DB00539B0E /* UniversitiesList */,
+				E9335AE72BE5014E00E583E8 /* Info.plist */,
 			);
-			path = Modules;
+			path = Config;
+			sourceTree = "<group>";
+		};
+		E9BC08A82BE5D41700D38980 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				E9335AE42BE5014E00E583E8 /* LaunchScreen.storyboard */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		E9F22E952BE5C71200539B0E /* Frameworks */ = {
@@ -178,93 +161,12 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
-		E9F22EA52BE5C9DB00539B0E /* API */ = {
+		E9F22EFE2BE5CB1D00539B0E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				E9F22EA42BE5C9DB00539B0E /* UniversitiesListAPIDataManager.swift */,
+				E994916B2BE5D1BE004B023A /* UniversitiesList */,
 			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		E9F22EA72BE5C9DB00539B0E /* Local */ = {
-			isa = PBXGroup;
-			children = (
-				E9F22EA62BE5C9DB00539B0E /* UniversitiesListLocalDataManager.swift */,
-			);
-			path = Local;
-			sourceTree = "<group>";
-		};
-		E9F22EA82BE5C9DB00539B0E /* DataManager */ = {
-			isa = PBXGroup;
-			children = (
-				E9F22EA52BE5C9DB00539B0E /* API */,
-				E9F22EA72BE5C9DB00539B0E /* Local */,
-			);
-			path = DataManager;
-			sourceTree = "<group>";
-		};
-		E9F22EAA2BE5C9DB00539B0E /* Endpoints */ = {
-			isa = PBXGroup;
-			children = (
-				E9F22EA92BE5C9DB00539B0E /* UniversitiesSearchEndpoint.swift */,
-			);
-			path = Endpoints;
-			sourceTree = "<group>";
-		};
-		E9F22EAD2BE5C9DB00539B0E /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				E9F22EAB2BE5C9DB00539B0E /* UAEUniversitiesListItem.swift */,
-				E9F22EAC2BE5C9DB00539B0E /* UniversitiesListInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		E9F22EAF2BE5C9DB00539B0E /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				E9F22EAE2BE5C9DB00539B0E /* UniversitiesListPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		E9F22EB12BE5C9DB00539B0E /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				E9F22EB02BE5C9DB00539B0E /* UAEUniversitiesListProtocols.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		E9F22EB42BE5C9DB00539B0E /* View */ = {
-			isa = PBXGroup;
-			children = (
-				E9F22EB22BE5C9DB00539B0E /* UniversitiesListView.swift */,
-				E9F22EB32BE5C9DB00539B0E /* UniversitiesListView.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		E9F22EB62BE5C9DB00539B0E /* WireFrame */ = {
-			isa = PBXGroup;
-			children = (
-				E9F22EB52BE5C9DB00539B0E /* UniversitiesListWireFrame.swift */,
-			);
-			path = WireFrame;
-			sourceTree = "<group>";
-		};
-		E9F22EB72BE5C9DB00539B0E /* UniversitiesList */ = {
-			isa = PBXGroup;
-			children = (
-				E9F22EA82BE5C9DB00539B0E /* DataManager */,
-				E9F22EAA2BE5C9DB00539B0E /* Endpoints */,
-				E9F22EAD2BE5C9DB00539B0E /* Interactor */,
-				E9F22EAF2BE5C9DB00539B0E /* Presenter */,
-				E9F22EB12BE5C9DB00539B0E /* Protocols */,
-				E9F22EB42BE5C9DB00539B0E /* View */,
-				E9F22EB62BE5C9DB00539B0E /* WireFrame */,
-			);
-			path = UniversitiesList;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,10 +186,7 @@
 			);
 			name = UAEUniversities;
 			packageProductDependencies = (
-				E9F22E6A2BE59CC300539B0E /* NetworkKit */,
-				E9F22E742BE5AC1800539B0E /* StorageKit */,
-				E9F22E992BE5C73500539B0E /* NetworkKit */,
-				E9F22E9C2BE5C74600539B0E /* StorageKit */,
+				E994916C2BE5D1EA004B023A /* UniversitiesList */,
 			);
 			productName = UAEUniversities;
 			productReference = E9335AD62BE5014C00E583E8 /* UAEUniversities.app */;
@@ -362,8 +261,6 @@
 			);
 			mainGroup = E9335ACD2BE5014C00E583E8;
 			packageReferences = (
-				E9F22E982BE5C73500539B0E /* XCLocalSwiftPackageReference "Frameworks/NetworkKit" */,
-				E9F22E9B2BE5C74600539B0E /* XCLocalSwiftPackageReference "Frameworks/StorageKit" */,
 			);
 			productRefGroup = E9335AD72BE5014C00E583E8 /* Products */;
 			projectDirPath = "";
@@ -385,7 +282,6 @@
 				E9335AE32BE5014E00E583E8 /* Assets.xcassets in Resources */,
 				E9F22E972BE5C71200539B0E /* StorageKit in Resources */,
 				E9335AE62BE5014E00E583E8 /* Base in Resources */,
-				E9F22EC02BE5C9DB00539B0E /* UniversitiesListView.xib in Resources */,
 				E9335AE12BE5014C00E583E8 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,18 +307,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9F22EBC2BE5C9DB00539B0E /* UniversitiesListInteractor.swift in Sources */,
-				E9F22EB82BE5C9DB00539B0E /* UniversitiesListAPIDataManager.swift in Sources */,
 				E9335ADE2BE5014C00E583E8 /* ViewController.swift in Sources */,
-				E9F22EB92BE5C9DB00539B0E /* UniversitiesListLocalDataManager.swift in Sources */,
 				E9335ADA2BE5014C00E583E8 /* AppDelegate.swift in Sources */,
-				E9F22EBF2BE5C9DB00539B0E /* UniversitiesListView.swift in Sources */,
-				E9F22EC12BE5C9DB00539B0E /* UniversitiesListWireFrame.swift in Sources */,
-				E9F22EBE2BE5C9DB00539B0E /* UAEUniversitiesListProtocols.swift in Sources */,
-				E9F22EBD2BE5C9DB00539B0E /* UniversitiesListPresenter.swift in Sources */,
-				E9F22EBA2BE5C9DB00539B0E /* UniversitiesSearchEndpoint.swift in Sources */,
-				E9F22EBB2BE5C9DB00539B0E /* UAEUniversitiesListItem.swift in Sources */,
-				E9335ADC2BE5014C00E583E8 /* SceneDelegate.swift in Sources */,
+				E9BC08AA2BE5D6D400D38980 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,7 +492,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = UAEUniversities/Info.plist;
+				INFOPLIST_FILE = UAEUniversities/Config/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -632,7 +519,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = UAEUniversities/Info.plist;
+				INFOPLIST_FILE = UAEUniversities/Config/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -764,33 +651,10 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		E9F22E982BE5C73500539B0E /* XCLocalSwiftPackageReference "Frameworks/NetworkKit" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Frameworks/NetworkKit;
-		};
-		E9F22E9B2BE5C74600539B0E /* XCLocalSwiftPackageReference "Frameworks/StorageKit" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Frameworks/StorageKit;
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		E9F22E6A2BE59CC300539B0E /* NetworkKit */ = {
+		E994916C2BE5D1EA004B023A /* UniversitiesList */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = NetworkKit;
-		};
-		E9F22E742BE5AC1800539B0E /* StorageKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = StorageKit;
-		};
-		E9F22E992BE5C73500539B0E /* NetworkKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = NetworkKit;
-		};
-		E9F22E9C2BE5C74600539B0E /* StorageKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = StorageKit;
+			productName = UniversitiesList;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
