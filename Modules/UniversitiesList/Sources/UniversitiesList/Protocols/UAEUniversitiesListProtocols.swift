@@ -9,7 +9,8 @@ protocol UniversitiesListViewProtocol: AnyObject {
     var presenter: UniversitiesListPresenterProtocol? { get set }
     
     func updateView()
-    
+    func showError(error: String)
+
     func showEmptyStateView()
     func hideEmptyStateView()
     

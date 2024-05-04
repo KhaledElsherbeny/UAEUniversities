@@ -41,6 +41,6 @@ extension UniversitiesListPresenter: UniversitiesListInteractorOutputProtocol  {
     }
     
     func didFaildFetchingUniversitiesList(error: Error) {
-        
+        view?.showError(error: error.localizedDescription)
     }
 }

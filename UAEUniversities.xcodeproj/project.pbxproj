@@ -16,6 +16,7 @@
 		E9335AFB2BE5014E00E583E8 /* UAEUniversitiesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9335AFA2BE5014E00E583E8 /* UAEUniversitiesUITests.swift */; };
 		E9335AFD2BE5014E00E583E8 /* UAEUniversitiesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9335AFC2BE5014E00E583E8 /* UAEUniversitiesUITestsLaunchTests.swift */; };
 		E994916D2BE5D1EA004B023A /* UniversitiesList in Frameworks */ = {isa = PBXBuildFile; productRef = E994916C2BE5D1EA004B023A /* UniversitiesList */; };
+		E9A4E13D2BE6B4DA0085B810 /* UtilitiesKit in Resources */ = {isa = PBXBuildFile; fileRef = E9A4E13C2BE6B4DA0085B810 /* UtilitiesKit */; };
 		E9BC08AA2BE5D6D400D38980 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BC08A92BE5D6D400D38980 /* SceneDelegate.swift */; };
 		E9F22E962BE5C71200539B0E /* NetworkKit in Resources */ = {isa = PBXBuildFile; fileRef = E9F22E932BE5C71200539B0E /* NetworkKit */; };
 		E9F22E972BE5C71200539B0E /* StorageKit in Resources */ = {isa = PBXBuildFile; fileRef = E9F22E942BE5C71200539B0E /* StorageKit */; };
@@ -52,8 +53,8 @@
 		E9335AFA2BE5014E00E583E8 /* UAEUniversitiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAEUniversitiesUITests.swift; sourceTree = "<group>"; };
 		E9335AFC2BE5014E00E583E8 /* UAEUniversitiesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAEUniversitiesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E994916B2BE5D1BE004B023A /* UniversitiesList */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UniversitiesList; sourceTree = "<group>"; };
+		E9A4E13C2BE6B4DA0085B810 /* UtilitiesKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UtilitiesKit; sourceTree = "<group>"; };
 		E9BC08A92BE5D6D400D38980 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E9BC08AB2BE6949200D38980 /* UtilitiesKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = UtilitiesKit; path = ../../UtilitiesKit; sourceTree = "<group>"; };
 		E9F22E932BE5C71200539B0E /* NetworkKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkKit; sourceTree = "<group>"; };
 		E9F22E942BE5C71200539B0E /* StorageKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = StorageKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,7 +157,7 @@
 		E9F22E952BE5C71200539B0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E9BC08AB2BE6949200D38980 /* UtilitiesKit */,
+				E9A4E13C2BE6B4DA0085B810 /* UtilitiesKit */,
 				E9F22E932BE5C71200539B0E /* NetworkKit */,
 				E9F22E942BE5C71200539B0E /* StorageKit */,
 			);
@@ -284,6 +285,7 @@
 				E9335AE32BE5014E00E583E8 /* Assets.xcassets in Resources */,
 				E9F22E972BE5C71200539B0E /* StorageKit in Resources */,
 				E9335AE62BE5014E00E583E8 /* Base in Resources */,
+				E9A4E13D2BE6B4DA0085B810 /* UtilitiesKit in Resources */,
 				E9335AE12BE5014C00E583E8 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

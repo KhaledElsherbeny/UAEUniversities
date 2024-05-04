@@ -7,8 +7,7 @@ import Foundation
 import UIKit
 import UtilitiesKit
 
-
-final public class UniversitiesListView: UIViewController, UniversitiesListViewProtocol {
+final public class UniversitiesListView: UIViewController {
     var presenter: UniversitiesListPresenterProtocol?
     
     @IBOutlet private(set) var tableView: UITableView!
@@ -34,7 +33,7 @@ final public class UniversitiesListView: UIViewController, UniversitiesListViewP
     }
 }
 
-extension UniversitiesListView {
+extension UniversitiesListView: UniversitiesListViewProtocol {
     func showLoadingView() {
         LoadingView.show()
     }
@@ -48,6 +47,18 @@ extension UniversitiesListView {
         tableView.reloadData()
     }
     
+    func showError(error: String) {
+        hideLoadingView()
+        let alertController = AlertBuilder
+            .init(
+                message: error,
+                preferredStyle: .alert
+            )
+            .addAction(title: "OK", style: .default, handler: nil)
+            .build()
+        present(alertController, animated: true, completion: nil)
+    }
+
     func showEmptyStateView() {}
     
     func hideEmptyStateView() {}
