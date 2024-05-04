@@ -7,6 +7,14 @@
 
 import Foundation
 
+public protocol NetworkSendableProtocol {
+    func send<T: Codable>(
+        model: T.Type,
+        endpoint: BaseEndpoint,
+        completionHandler: @escaping (Result<T, NetworkError>) -> Void
+    )
+}
+
 public final class NetworkManager {
     public static let shared = NetworkManager()
     
@@ -20,7 +28,9 @@ public final class NetworkManager {
         self.networkService = networkService
         self.parser = parser
     }
-    
+}
+
+extension NetworkManager: NetworkSendableProtocol {
     public func send<T: Codable>(
         model: T.Type,
         endpoint: BaseEndpoint,
