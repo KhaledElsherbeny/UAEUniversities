@@ -16,7 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = UniversitiesListWireFrame.createUniversitiesListModule()
+        let universitiesListView = UniversitiesListWireFrame.createUniversitiesListModule()
+        let rootNavigationController = UINavigationController(rootViewController: universitiesListView)
+        window?.rootViewController = rootNavigationController
         window?.makeKeyAndVisible()
     }
 }

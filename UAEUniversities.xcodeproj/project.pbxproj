@@ -53,6 +53,7 @@
 		E9335AFC2BE5014E00E583E8 /* UAEUniversitiesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAEUniversitiesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E994916B2BE5D1BE004B023A /* UniversitiesList */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UniversitiesList; sourceTree = "<group>"; };
 		E9BC08A92BE5D6D400D38980 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E9BC08AB2BE6949200D38980 /* UtilitiesKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = UtilitiesKit; path = ../../UtilitiesKit; sourceTree = "<group>"; };
 		E9F22E932BE5C71200539B0E /* NetworkKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkKit; sourceTree = "<group>"; };
 		E9F22E942BE5C71200539B0E /* StorageKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = StorageKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,6 +156,7 @@
 		E9F22E952BE5C71200539B0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9BC08AB2BE6949200D38980 /* UtilitiesKit */,
 				E9F22E932BE5C71200539B0E /* NetworkKit */,
 				E9F22E942BE5C71200539B0E /* StorageKit */,
 			);

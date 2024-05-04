@@ -5,23 +5,8 @@
 
 import Foundation
 import UIKit
+import UtilitiesKit
 
-class TableViewCell: UITableViewCell {
-    static let reuseIdentifier = "TableViewCell"
-
-        override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-            super.init(style: style, reuseIdentifier: reuseIdentifier)
-            setupViews()
-        }
-
-        required init?(coder aDecoder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
-
-        private func setupViews() {
-            // Customize your cell here
-        }
-}
 
 final public class UniversitiesListView: UIViewController, UniversitiesListViewProtocol {
     var presenter: UniversitiesListPresenterProtocol?
@@ -29,8 +14,43 @@ final public class UniversitiesListView: UIViewController, UniversitiesListViewP
     @IBOutlet private(set) var tableView: UITableView!
     
     public override func viewDidLoad() {
-          super.viewDidLoad()
-      }
+        super.viewDidLoad()
+        setupTableView()
+        setupNavigationBar()
+        presenter?.viewDidLoad()
+    }
+    
+    private func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(
+            UINib(nibName: UniversityItemCell.reuseIdentifier, bundle: .module),
+            forCellReuseIdentifier: UniversityItemCell.reuseIdentifier
+        )
+    }
+    
+    private func setupNavigationBar() {
+        title = "Unversities list"
+    }
+}
+
+extension UniversitiesListView {
+    func showLoadingView() {
+        LoadingView.show()
+    }
+    
+    func hideLoadingView() {
+        LoadingView.hide()
+    }
+    
+    func updateView() {
+        hideLoadingView()
+        tableView.reloadData()
+    }
+    
+    func showEmptyStateView() {}
+    
+    func hideEmptyStateView() {}
 }
 
 extension UniversitiesListView: UITableViewDelegate, UITableViewDataSource {
@@ -39,12 +59,17 @@ extension UniversitiesListView: UITableViewDelegate, UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return presenter?.numberOfItems() ?? 0
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.reuseIdentifier, for: indexPath)
-        cell.textLabel?.text = "Hello \(indexPath.row)"
+        let reuseIdentifier = UniversityItemCell.reuseIdentifier
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? UniversityItemCell,
+              let item = presenter?.item(at: indexPath.row)
+        else {
+            return UITableViewCell()
+        }
+        cell.config(with: item)
         return cell
     }
 }

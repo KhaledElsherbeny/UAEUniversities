@@ -17,11 +17,12 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         .package(path: "../Frameworks/NetworkKit"),
         .package(path: "../Frameworks/StorageKit"),
+        .package(path: "../Frameworks/UtilitiesKit"),
     ],
     targets: [
         .target(
             name: "UniversitiesList",
-            dependencies: ["NetworkKit", "StorageKit"]),
+            dependencies: ["NetworkKit", "StorageKit", "UtilitiesKit"]),
         .testTarget(
             name: "UniversitiesListTests",
             dependencies: ["UniversitiesList"]),

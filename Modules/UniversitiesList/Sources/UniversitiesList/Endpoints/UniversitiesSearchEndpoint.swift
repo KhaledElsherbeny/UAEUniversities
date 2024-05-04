@@ -13,8 +13,8 @@ enum UniversitiesSearchEndpoint: BaseEndpoint {
     
     var path: String {
         switch self {
-        case .getUniversities(let country):
-            return "?country=\(country)"
+        case .getUniversities:
+            return "search"
         }
     }
     
@@ -22,6 +22,13 @@ enum UniversitiesSearchEndpoint: BaseEndpoint {
         switch self {
         case .getUniversities:
             return .get
+        }
+    }
+    
+    var parameters: Parameters {
+        switch self {
+        case .getUniversities(let country):
+            return ["country": country]
         }
     }
 }
