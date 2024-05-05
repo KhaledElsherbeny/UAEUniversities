@@ -3,10 +3,12 @@
 // Copyright (c) 2024 VIPER. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import Domain
 import StorageKit
 import NetworkKit
+import UniversityDetails
 
 protocol UniversitiesListViewProtocol: AnyObject {
     var presenter: UniversitiesListPresenterProtocol? { get set }
@@ -22,17 +24,23 @@ protocol UniversitiesListViewProtocol: AnyObject {
 }
 
 protocol UniversitiesListWireFrameProtocol: AnyObject {
+    var viewController: UIViewController? { get set }
+    
     static func createUniversitiesListModule() -> UniversitiesListView
+    
+    func showDdetails(for universityItem: UniversityListItem, delegate: UniversityDetailsOutputDelegate)
 }
 
 protocol UniversitiesListPresenterProtocol: AnyObject {
     var view: UniversitiesListViewProtocol? { get set }
     var interactor: UniversitiesListInteractorInputProtocol? { get set }
     var wireFrame: UniversitiesListWireFrameProtocol? { get set }
-    
-    func viewDidLoad()
+
+    func fetchUniversitiesList(country: String)
+
     func numberOfItems() -> Int
     func item(at index: Int) -> UniversityListItemUIModel?
+    func didSelectItem(at index: Int)
 }
 
 protocol UniversitiesListInteractorOutputProtocol: AnyObject {
@@ -43,9 +51,14 @@ protocol UniversitiesListInteractorOutputProtocol: AnyObject {
 protocol UniversitiesListInteractorInputProtocol: AnyObject {
     var presenter: UniversitiesListInteractorOutputProtocol? { get set }
     var APIDataManager: UniversitiesListAPIDataManagerInputProtocol? { get set }
-    var localDatamanager: UniversitiesListLocalDataManagerInputProtocol? { get set }
+    var localDataManager: UniversitiesListLocalDataManagerInputProtocol? { get set }
     
-    func fetchUniversitiesList(country: String)
+    var countrySearchTerm: String { get set }
+    var universitiesListData: [UniversityListItem] { get set }
+
+    func updateCountrySearchTerm(country: String)
+    func fetchUniversitiesList()
+    func refreshUniversitiesList()
 }
 
 protocol UniversitiesListAPIDataManagerInputProtocol: AnyObject {
@@ -55,4 +68,5 @@ protocol UniversitiesListAPIDataManagerInputProtocol: AnyObject {
 protocol UniversitiesListLocalDataManagerInputProtocol: AnyObject {
     func saveUniversitiesList(list: [UniversityListItemRealm], completion: @escaping (Result<Bool, StorageDatabaseError>)-> Void)
     func fetchUniversitiesList(contry: String, completion: @escaping (Result<[UniversityListItemRealm], StorageDatabaseError>)-> Void)
+    func clearUniversitiesList(contry: String, completion: @escaping (Result<Bool, StorageDatabaseError>)-> Void)
 }

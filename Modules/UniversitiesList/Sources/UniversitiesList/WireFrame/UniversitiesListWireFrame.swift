@@ -3,9 +3,14 @@
 // Copyright (c) 2024 VIPER. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import UniversityDetails
+import Domain
 
 public final class UniversitiesListWireFrame: UniversitiesListWireFrameProtocol {
+    
+    weak var viewController: UIViewController?
+    
     public static func createUniversitiesListModule() -> UniversitiesListView {
         // Generating module components
         let view = UniversitiesListView(nibName: "UniversitiesListView", bundle: .module)
@@ -22,8 +27,14 @@ public final class UniversitiesListWireFrame: UniversitiesListWireFrameProtocol 
         presenter.interactor = interactor
         interactor.presenter = presenter
         interactor.APIDataManager = APIDataManager
-        interactor.localDatamanager = localDataManager
+        interactor.localDataManager = localDataManager
+        wireFrame.viewController = view
         
         return view
+    }
+    
+    func showDdetails(for universityItem: UniversityListItem, delegate: UniversityDetailsOutputDelegate) {
+        let detailsView = UniversityDetailsWireFrame.presentUniversityDetailsModule(with: universityItem, delegate: delegate)
+        viewController?.navigationController?.pushViewController(detailsView, animated: true)
     }
 }

@@ -1,8 +1,8 @@
 //
-//  File.swift
-//  
+//  StorageDatabaseError.swift
+//  UAEUniversities
 //
-//  Created by Khalid on 05/05/2024.
+//  Created by Khalid on 03/05/2024.
 //
 
 import Foundation

@@ -11,7 +11,8 @@ let package = Package(
     products: [
         .library(
             name: "UniversitiesList",
-            targets: ["UniversitiesList"]),
+            targets: ["UniversitiesList"]
+        ),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -19,14 +20,17 @@ let package = Package(
         .package(path: "../Frameworks/StorageKit"),
         .package(path: "../Frameworks/UtilitiesKit"),
         .package(path: "../Modules/Domain"),
+        .package(path: "../Modules/UniversityDetails"),
     ],
     targets: [
         .target(
             name: "UniversitiesList",
-            dependencies: ["NetworkKit", "StorageKit", "UtilitiesKit", "Domain"]),
+            dependencies: ["NetworkKit", "StorageKit", "UtilitiesKit", "Domain", "UniversityDetails"]
+        ),
         .testTarget(
             name: "UniversitiesListTests",
-            dependencies: ["UniversitiesList"]),
+            dependencies: ["UniversitiesList"]
+        ),
     ]
 )
 

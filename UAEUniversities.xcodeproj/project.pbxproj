@@ -171,8 +171,8 @@
 		E9F22EFE2BE5CB1D00539B0E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				E9011CF72BE7158F0066E23E /* UniversityDetails */,
 				E997DBB92BE713A1000693F7 /* Domain */,
+				E9011CF72BE7158F0066E23E /* UniversityDetails */,
 				E994916B2BE5D1BE004B023A /* UniversitiesList */,
 			);
 			path = Modules;

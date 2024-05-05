@@ -1,3 +1,10 @@
+//
+//  UniversityListItem.swift
+//  UAEUniversities
+//
+//  Created by Khalid on 03/05/2024.
+//
+
 import Foundation
 
 public struct UniversityListItem {

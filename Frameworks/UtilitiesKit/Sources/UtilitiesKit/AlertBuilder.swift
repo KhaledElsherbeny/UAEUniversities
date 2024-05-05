@@ -1,9 +1,8 @@
 //
 //  AlertBuilder.swift
-//  WW-Exercise-01
+//  UAEUniversities
 //
-//  Created by Khalid on 29/08/2022.
-//  Copyright © 2022 Weight Watchers. All rights reserved.
+//  Created by Khalid on 03/05/2024.
 //
 
 import UIKit

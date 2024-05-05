@@ -16,7 +16,7 @@ final public class UniversitiesListView: UIViewController {
         super.viewDidLoad()
         setupTableView()
         setupNavigationBar()
-        presenter?.viewDidLoad()
+        fetchUniversitiesList()
     }
     
     private func setupTableView() {
@@ -30,6 +30,10 @@ final public class UniversitiesListView: UIViewController {
     
     private func setupNavigationBar() {
         title = "Unversities list"
+    }
+    
+    private func fetchUniversitiesList() {
+        presenter?.fetchUniversitiesList(country: "United Arab Emirates")
     }
 }
 
@@ -82,5 +86,9 @@ extension UniversitiesListView: UITableViewDelegate, UITableViewDataSource {
         }
         cell.config(with: item)
         return cell
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didSelectItem(at: indexPath.row)
     }
 }

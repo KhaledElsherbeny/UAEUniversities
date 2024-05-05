@@ -34,4 +34,18 @@ final class UniversitiesListLocalDataManager: UniversitiesListLocalDataManagerIn
             }
         }
     }
+    
+    func clearUniversitiesList(contry: String, completion: @escaping (Result<Bool, StorageDatabaseError>)-> Void) {
+        fetchUniversitiesList(contry: contry) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let items):
+                self.storageManager.delete(objects: items) { success in
+                    success ? completion(.success(true)) : completion(.failure(.databaseWriteError))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }

@@ -5,19 +5,26 @@ import PackageDescription
 
 let package = Package(
     name: "UniversityDetails",
+    platforms: [
+        .iOS(.v14)
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "UniversityDetails",
-            targets: ["UniversityDetails"]),
+            targets: ["UniversityDetails"]
+        ),
+    ],
+    dependencies: [
+        .package(path: "../Modules/Domain"),
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "UniversityDetails"),
+            name: "UniversityDetails",
+            dependencies: ["Domain"]
+        ),
         .testTarget(
             name: "UniversityDetailsTests",
-            dependencies: ["UniversityDetails"]),
+            dependencies: ["UniversityDetails"]
+        ),
     ]
 )

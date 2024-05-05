@@ -8,35 +8,61 @@ import Domain
 import StorageKit
 import NetworkKit
 
-class UniversitiesListInteractor: UniversitiesListInteractorInputProtocol {
+final class UniversitiesListInteractor: UniversitiesListInteractorInputProtocol {
     weak var presenter: UniversitiesListInteractorOutputProtocol?
     var APIDataManager: UniversitiesListAPIDataManagerInputProtocol?
-    var localDatamanager: UniversitiesListLocalDataManagerInputProtocol?
+    var localDataManager: UniversitiesListLocalDataManagerInputProtocol?
     
-    func fetchUniversitiesList(country: String) {
-        APIDataManager?.fetchUniversitiesList(contry: country) { [weak self] result in
+    var countrySearchTerm: String = ""
+    var universitiesListData = [UniversityListItem]()
+
+    func updateCountrySearchTerm(country: String) {
+        countrySearchTerm = country
+    }
+    
+    func fetchUniversitiesList() {
+        APIDataManager?.fetchUniversitiesList(contry: countrySearchTerm) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let listItems):
                 self.handleFetchSuccess(listItems: listItems)
             case .failure(let error):
-                self.handleFetchFailure(country: country, error: error)
+                self.handleFetchFailure(error: error)
             }
         }
     }
+    
+    func refreshUniversitiesList() {
+        universitiesListData = []
+        presenter?.didSuccessFetchingUniversitiesList(items: [])
 
+        localDataManager?.clearUniversitiesList(contry: countrySearchTerm) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.fetchUniversitiesList()
+            case .failure(let error):
+                self.presenter?.didFaildFetchingUniversitiesList(error: error)
+            }
+        }
+    }
+}
+
+extension UniversitiesListInteractor {
     private func handleFetchSuccess(listItems: [UniversityListItemDTO]) {
         let items = listItems.map { UniversityListItem(universityListItem: $0) }
+        universitiesListData = items
         saveUniversitiesList(universityListItem: items)
         presenter?.didSuccessFetchingUniversitiesList(items: items)
     }
 
-    private func handleFetchFailure(country: String, error: NetworkError) {
-        fetchStoredUniversitiesList(country: country) { [weak self] result in
+    private func handleFetchFailure(error: NetworkError) {
+        fetchStoredUniversitiesList() { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let items):
                 if !items.isEmpty {
+                    self.universitiesListData = items
                     self.presenter?.didSuccessFetchingUniversitiesList(items: items)
                 } else {
                     self.presenter?.didFaildFetchingUniversitiesList(error: error)
@@ -51,17 +77,14 @@ class UniversitiesListInteractor: UniversitiesListInteractorInputProtocol {
 extension UniversitiesListInteractor {
     private func saveUniversitiesList(universityListItem: [UniversityListItem]) {
         let itemsToSave = universityListItem.map({ UniversityListItemRealm(universityListItem: $0) })
-        localDatamanager?.saveUniversitiesList(list: itemsToSave, completion: { _ in })
+        localDataManager?.saveUniversitiesList(list: itemsToSave, completion: { _ in })
     }
     
-    private func fetchStoredUniversitiesList(
-        country: String,
-        completion: @escaping (Result<[UniversityListItem], StorageDatabaseError>)-> Void
-    ) {
-        localDatamanager?.fetchUniversitiesList(contry: country) { result in
+    private func fetchStoredUniversitiesList(completion: @escaping (Result<[UniversityListItem], StorageDatabaseError>)-> Void) {
+        localDataManager?.fetchUniversitiesList(contry: countrySearchTerm) { result in
             switch result {
-            case .success(let storedIems):
-                let items = storedIems.map({ UniversityListItem(universityListItem: $0)})
+            case .success(let storedItems):
+                let items = storedItems.map({ UniversityListItem(universityListItem: $0)})
                 completion(.success(items))
             case .failure(let error):
                 completion(.failure(error))
