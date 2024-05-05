@@ -21,7 +21,7 @@
                BlueprintIdentifier = "UniversitiesListTests"
                BuildableName = "UniversitiesListTests"
                BlueprintName = "UniversitiesListTests"
-               ReferencedContainer = "container:Modules/UniversitiesList">
+               ReferencedContainer = "container:">
             </BuildableReference>
          </TestableReference>
       </Testables>

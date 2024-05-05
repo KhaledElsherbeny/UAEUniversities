@@ -14,7 +14,7 @@
   "testTargets" : [
     {
       "target" : {
-        "containerPath" : "container:",
+        "containerPath" : "container:..\/UniversityDetails",
         "identifier" : "UniversityDetailsTests",
         "name" : "UniversityDetailsTests"
       }
