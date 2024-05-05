@@ -13,7 +13,7 @@ class UniversitiesListAPIDataManagerTests: XCTestCase {
         ]
         
         let mockNetworkManager = MockNetworkManager(mockResponse: .success(mockResponse))
-        var dataManager = UniversitiesListAPIDataManager()
+        let dataManager = UniversitiesListAPIDataManager()
         dataManager.networkManager = mockNetworkManager
 
         // Perform fetch universities list
@@ -33,7 +33,7 @@ class UniversitiesListAPIDataManagerTests: XCTestCase {
 
     func testFetchUniversitiesListFailure() {
         let mockNetworkManager = MockNetworkManager<[UniversityListItemDTO]>(mockResponse: .failure(NetworkError.serverError))
-        var dataManager = UniversitiesListAPIDataManager()
+        let dataManager = UniversitiesListAPIDataManager()
         dataManager.networkManager = mockNetworkManager
 
         // Perform fetch universities list
