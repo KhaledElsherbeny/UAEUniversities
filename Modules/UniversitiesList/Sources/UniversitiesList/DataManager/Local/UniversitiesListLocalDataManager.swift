@@ -11,10 +11,10 @@ final class UniversitiesListLocalDataManager: UniversitiesListLocalDataManagerIn
     var storageManager: StorageDatabase = StorageDatabaseManager.sharedInstance
     
     func fetchUniversitiesList(
-        contry: String,
+        country: String,
         completion: @escaping (Result<[UniversityListItemRealm], StorageDatabaseError>)-> Void
     ) {
-        let predicate = NSPredicate(format: "country = %@", contry)
+        let predicate = NSPredicate(format: "country = %@", country)
         let results = storageManager.get(
             objectsWithQuery: UniversityListItemRealm.self,
             predicate: predicate
@@ -35,8 +35,8 @@ final class UniversitiesListLocalDataManager: UniversitiesListLocalDataManagerIn
         }
     }
     
-    func clearUniversitiesList(contry: String, completion: @escaping (Result<Bool, StorageDatabaseError>)-> Void) {
-        fetchUniversitiesList(contry: contry) { [weak self] result in
+    func clearUniversitiesList(country: String, completion: @escaping (Result<Bool, StorageDatabaseError>)-> Void) {
+        fetchUniversitiesList(country: country) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let items):

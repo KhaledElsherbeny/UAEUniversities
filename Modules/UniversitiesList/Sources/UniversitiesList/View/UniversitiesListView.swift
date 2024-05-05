@@ -39,11 +39,11 @@ final public class UniversitiesListView: UIViewController {
 
 extension UniversitiesListView: UniversitiesListViewProtocol {
     func showLoadingView() {
-        LoadingView.show()
+        LoadingView.stop()
     }
     
     func hideLoadingView() {
-        LoadingView.hide()
+        LoadingView.stop()
     }
     
     func updateView() {

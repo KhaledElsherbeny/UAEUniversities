@@ -11,12 +11,12 @@ final class UniversitiesListAPIDataManager: UniversitiesListAPIDataManagerInputP
     var networkManager: NetworkSendableProtocol = NetworkManager.shared
     
     func fetchUniversitiesList(
-        contry: String,
+        country: String,
         completion: @escaping (Result<[UniversityListItemDTO], NetworkError>)-> Void
     ) {
         networkManager.send(
             model: [UniversityListItemDTO].self,
-            endpoint: UniversitiesSearchEndpoint.getUniversities(country: contry)
+            endpoint: UniversitiesSearchEndpoint.getUniversities(country: country)
         ) { response in
             switch response {
             case .success(let itemsList):

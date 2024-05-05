@@ -21,7 +21,7 @@ final class UniversitiesListInteractor: UniversitiesListInteractorInputProtocol 
     }
     
     func fetchUniversitiesList() {
-        APIDataManager?.fetchUniversitiesList(contry: countrySearchTerm) { [weak self] result in
+        APIDataManager?.fetchUniversitiesList(country: countrySearchTerm) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let listItems):
@@ -36,7 +36,7 @@ final class UniversitiesListInteractor: UniversitiesListInteractorInputProtocol 
         universitiesListData = []
         presenter?.didSuccessFetchingUniversitiesList(items: [])
 
-        localDataManager?.clearUniversitiesList(contry: countrySearchTerm) { [weak self] result in
+        localDataManager?.clearUniversitiesList(country: countrySearchTerm) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success:
@@ -81,7 +81,7 @@ extension UniversitiesListInteractor {
     }
     
     private func fetchStoredUniversitiesList(completion: @escaping (Result<[UniversityListItem], StorageDatabaseError>)-> Void) {
-        localDataManager?.fetchUniversitiesList(contry: countrySearchTerm) { result in
+        localDataManager?.fetchUniversitiesList(country: countrySearchTerm) { result in
             switch result {
             case .success(let storedItems):
                 let items = storedItems.map({ UniversityListItem(universityListItem: $0)})

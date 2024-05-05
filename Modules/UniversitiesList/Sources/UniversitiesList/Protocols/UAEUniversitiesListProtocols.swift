@@ -62,11 +62,11 @@ protocol UniversitiesListInteractorInputProtocol: AnyObject {
 }
 
 protocol UniversitiesListAPIDataManagerInputProtocol: AnyObject {
-    func fetchUniversitiesList(contry: String, completion: @escaping (Result<[UniversityListItemDTO], NetworkError>)-> Void)
+    func fetchUniversitiesList(country: String, completion: @escaping (Result<[UniversityListItemDTO], NetworkError>)-> Void)
 }
 
 protocol UniversitiesListLocalDataManagerInputProtocol: AnyObject {
     func saveUniversitiesList(list: [UniversityListItemRealm], completion: @escaping (Result<Bool, StorageDatabaseError>)-> Void)
-    func fetchUniversitiesList(contry: String, completion: @escaping (Result<[UniversityListItemRealm], StorageDatabaseError>)-> Void)
-    func clearUniversitiesList(contry: String, completion: @escaping (Result<Bool, StorageDatabaseError>)-> Void)
+    func fetchUniversitiesList(country: String, completion: @escaping (Result<[UniversityListItemRealm], StorageDatabaseError>)-> Void)
+    func clearUniversitiesList(country: String, completion: @escaping (Result<Bool, StorageDatabaseError>)-> Void)
 }
