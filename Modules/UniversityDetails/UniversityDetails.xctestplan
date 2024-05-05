@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "CFA9638C-6D0C-4936-900E-4C0014DB8FCD",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "UniversityDetailsTests",
+        "name" : "UniversityDetailsTests"
+      }
+    }
+  ],
+  "version" : 1
+}

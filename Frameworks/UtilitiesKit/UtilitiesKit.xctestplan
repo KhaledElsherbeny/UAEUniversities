@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "7C178D19-8088-4DA9-AF12-57379FD45467",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "UtilitiesKitTests",
+        "name" : "UtilitiesKitTests"
+      }
+    }
+  ],
+  "version" : 1
+}

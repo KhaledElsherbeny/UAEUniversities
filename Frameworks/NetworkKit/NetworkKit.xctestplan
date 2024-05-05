@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "8AFBD4D2-7F53-4C81-99D6-CAF2FD9C754B",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "NetworkKitTests",
+        "name" : "NetworkKitTests"
+      }
+    }
+  ],
+  "version" : 1
+}

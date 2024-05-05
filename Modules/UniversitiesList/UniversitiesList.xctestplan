@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "7A3E6707-94C5-472E-A89B-AA7B8D812014",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "UniversitiesListTests",
+        "name" : "UniversitiesListTests"
+      }
+    }
+  ],
+  "version" : 1
+}
