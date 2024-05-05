@@ -8,10 +8,14 @@
 import Foundation
 import RealmSwift
 
+/// Manager responsible for storage database operations.
 public class StorageDatabaseManager: NSObject, StorageDatabase {
     // MARK: - Variables
     
+    /// Shared instance of `StorageDatabaseManager`.
     public static let sharedInstance = StorageDatabaseManager()
+    
+    /// The shared Realm instance.
     var sharedRealm: Realm?
     
     // MARK: - Init
@@ -27,7 +31,7 @@ public class StorageDatabaseManager: NSObject, StorageDatabase {
             do {
                 sharedRealm = try Realm(configuration: Realm.Configuration.defaultConfiguration)
             } catch {
-                print("can't creat realm object")
+                print("can't create realm object")
             }
         }
     }
@@ -49,6 +53,11 @@ public class StorageDatabaseManager: NSObject, StorageDatabase {
         Realm.Configuration.defaultConfiguration = config
     }
     
+    /// Calls the completion handler on the main thread.
+    ///
+    /// - Parameters:
+    ///   - value: The boolean value to pass to the completion handler.
+    ///   - completion: The completion handler.
     func completionHandler(value: Bool, completion: StorageCompletionHandler) {
         DispatchQueue.main.async {
             completion?(value)
@@ -57,6 +66,12 @@ public class StorageDatabaseManager: NSObject, StorageDatabase {
 }
 
 extension StorageDatabaseManager {
+    /// Writes a single object to the database.
+    ///
+    /// - Parameters:
+    ///   - object: The object to write to the database.
+    ///   - completion: The completion handler called after the write operation.
+    ///   - block: A block called after the write operation with the Realm instance and the resolved object.
     func write(
         object: Object,
         completion: StorageCompletionHandler,
@@ -81,6 +96,12 @@ extension StorageDatabaseManager {
         }
     }
     
+    /// Writes an array of objects to the database.
+    ///
+    /// - Parameters:
+    ///   - objects: The objects to write to the database.
+    ///   - completion: The completion handler called after the write operation.
+    ///   - block: A block called after the write operation with the Realm instance and the resolved objects.
     func write(
         objects: [Object],
         completion: StorageCompletionHandler,

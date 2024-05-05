@@ -7,13 +7,24 @@ import Foundation
 import UIKit
 import Domain
 
+/// View controller responsible for displaying university details.
 public final class UniversityDetailsView: UIViewController, UniversityDetailsViewProtocol {
+    /// Reference to the presenter.
     var presenter: UniversityDetailsPresenterProtocol?
     
+    /// Label displaying the university name.
     @IBOutlet weak var universityNameLabel: UILabel!
+    
+    /// Label displaying the university state.
     @IBOutlet weak var unversityStateLabel: UILabel!
+    
+    /// Label displaying the country name.
     @IBOutlet weak var countryNameLabel: UILabel!
+    
+    /// Label displaying the country code.
     @IBOutlet weak var countryCodeLabel: UILabel!
+    
+    /// Label displaying the university web page.
     @IBOutlet weak var webPageLabel: UILabel!
     
     public override func viewDidLoad() {
@@ -23,7 +34,7 @@ public final class UniversityDetailsView: UIViewController, UniversityDetailsVie
     }
     
     private func setupNavigationBar() {
-        title = "Unversity Details"
+        title = "University Details"
         
         let refreshButton = UIBarButtonItem(
             barButtonSystemItem: .refresh,
@@ -33,12 +44,15 @@ public final class UniversityDetailsView: UIViewController, UniversityDetailsVie
         navigationItem.rightBarButtonItem = refreshButton
     }
     
+    /// Action triggered when the refresh button is tapped.
     @objc private func refreshButtonTapped() {
         presenter?.didTapRefresh()
     }
 }
 
 extension UniversityDetailsView {
+    /// Updates the view with the provided university item.
+    /// - Parameter universityItem: The university item to display.
     func updateView(with universityItem: UniversityListItem) {
         universityNameLabel.text = universityItem.name
         unversityStateLabel.text = universityItem.stateProvince ?? "N/A"

@@ -6,9 +6,16 @@
 import UIKit
 import Domain
 
-public final class UniversityDetailsWireFrame: UniversityDetailsWireFrameProtocol {    
+/// Wireframe responsible for presenting the university details module.
+public final class UniversityDetailsWireFrame: UniversityDetailsWireFrameProtocol {
+    /// Reference to the view controller.
     weak var viewController: UIViewController?
     
+    /// Presents the university details module.
+    /// - Parameters:
+    ///   - universityItem: The university item to display details for.
+    ///   - delegate: The delegate for handling events from the details module.
+    /// - Returns: The view controller of the university details module.
     public static func presentUniversityDetailsModule(
         with universityItem: UniversityListItem,
         delegate: UniversityDetailsOutputDelegate?
@@ -21,7 +28,7 @@ public final class UniversityDetailsWireFrame: UniversityDetailsWireFrameProtoco
         let localDataManager: UniversityDetailsLocalDataManagerInputProtocol = UniversityDetailsLocalDataManager()
         let wireFrame: UniversityDetailsWireFrameProtocol = UniversityDetailsWireFrame()
         
-        // Connecting
+        // Connecting components
         view.presenter = presenter
         presenter.view = view
         presenter.wireFrame = wireFrame
@@ -34,9 +41,10 @@ public final class UniversityDetailsWireFrame: UniversityDetailsWireFrameProtoco
         return view
     }
     
-    func dismiss() {
-        if viewController?.navigationController != nil {
-            viewController?.navigationController?.popViewController(animated: true)
+    /// Dismisses the university details module.
+    public func dismiss() {
+        if let navigationController = viewController?.navigationController {
+            navigationController.popViewController(animated: true)
         } else {
             viewController?.dismiss(animated: true)
         }

@@ -7,9 +7,12 @@
 
 import Foundation
 
+/// Class responsible for logging network requests and responses.
 final class NetworkLogger {
+    /// Logs the outgoing network request.
+    ///
+    /// - Parameter request: The URL request.
     static func log(request: URLRequest) {
-        
         print("\n - - - - - - - - - - OUTGOING - - - - - - - - - - \n")
         defer { print("\n - - - - - - - - - -  END - - - - - - - - - - \n") }
         
@@ -36,6 +39,9 @@ final class NetworkLogger {
         print(logOutput)
     }
     
+    /// Logs the network response.
+    ///
+    /// - Parameter response: The response data.
     static func log(response: Data?) {
         guard let data = response else {
             return

@@ -7,7 +7,16 @@
 
 import Foundation
 
+/// Protocol defining functionalities for parsing network responses.
 protocol NetworkParserProtocol: AnyObject {
+    /// Handles the network response based on the provided model.
+    ///
+    /// - Parameters:
+    ///   - model: The model type to decode the response.
+    ///   - data: The response data.
+    ///   - response: The URL response.
+    ///   - error: The error, if any.
+    /// - Returns: A Result object with the decoded model or a NetworkError.
     func handleNetworkResponse<T: Codable>(
         model: T.Type,
         data: Data?,
@@ -16,7 +25,16 @@ protocol NetworkParserProtocol: AnyObject {
     ) -> Result<T, NetworkError>
 }
 
+/// Class responsible for parsing network responses.
 final class NetworkParser: NetworkParserProtocol {
+    /// Handles the network response based on the provided model.
+    ///
+    /// - Parameters:
+    ///   - model: The model type to decode the response.
+    ///   - data: The response data.
+    ///   - response: The URL response.
+    ///   - error: The error, if any.
+    /// - Returns: A Result object with the decoded model or a NetworkError.
     func handleNetworkResponse<T: Codable>(
         model: T.Type,
         data: Data?,
@@ -47,6 +65,12 @@ final class NetworkParser: NetworkParserProtocol {
         }
     }
     
+    /// Parses the response data to the provided model type.
+    ///
+    /// - Parameters:
+    ///   - model: The model type to decode the response.
+    ///   - data: The response data.
+    /// - Returns: A Result object with the decoded model or a NetworkError.
     func parseData<T: Codable>(
         model: T.Type,
         data: Data?
