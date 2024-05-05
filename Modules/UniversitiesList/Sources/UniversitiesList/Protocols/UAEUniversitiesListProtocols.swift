@@ -4,6 +4,9 @@
 //
 
 import Foundation
+import Domain
+import StorageKit
+import NetworkKit
 
 protocol UniversitiesListViewProtocol: AnyObject {
     var presenter: UniversitiesListPresenterProtocol? { get set }
@@ -46,9 +49,10 @@ protocol UniversitiesListInteractorInputProtocol: AnyObject {
 }
 
 protocol UniversitiesListAPIDataManagerInputProtocol: AnyObject {
-    func fetchUniversitiesList(contry: String, completion: @escaping (Result<[UniversitiesListItem], Error>)-> Void)
+    func fetchUniversitiesList(contry: String, completion: @escaping (Result<[UniversityListItemDTO], NetworkError>)-> Void)
 }
 
 protocol UniversitiesListLocalDataManagerInputProtocol: AnyObject {
-    func fetchUniversitiesList(contry: String, completion: @escaping (Result<[UniversitiesListItem], Error>)-> Void)
+    func saveUniversitiesList(list: [UniversityListItemRealm], completion: @escaping (Result<Bool, StorageDatabaseError>)-> Void)
+    func fetchUniversitiesList(contry: String, completion: @escaping (Result<[UniversityListItemRealm], StorageDatabaseError>)-> Void)
 }

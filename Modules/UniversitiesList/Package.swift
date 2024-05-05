@@ -18,11 +18,12 @@ let package = Package(
         .package(path: "../Frameworks/NetworkKit"),
         .package(path: "../Frameworks/StorageKit"),
         .package(path: "../Frameworks/UtilitiesKit"),
+        .package(path: "../Modules/Domain"),
     ],
     targets: [
         .target(
             name: "UniversitiesList",
-            dependencies: ["NetworkKit", "StorageKit", "UtilitiesKit"]),
+            dependencies: ["NetworkKit", "StorageKit", "UtilitiesKit", "Domain"]),
         .testTarget(
             name: "UniversitiesListTests",
             dependencies: ["UniversitiesList"]),

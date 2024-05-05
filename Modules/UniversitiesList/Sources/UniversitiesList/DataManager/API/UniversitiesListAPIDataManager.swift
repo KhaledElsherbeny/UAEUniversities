@@ -12,10 +12,10 @@ final class UniversitiesListAPIDataManager: UniversitiesListAPIDataManagerInputP
     
     func fetchUniversitiesList(
         contry: String,
-        completion: @escaping (Result<[UniversitiesListItem], Error>)-> Void
+        completion: @escaping (Result<[UniversityListItemDTO], NetworkError>)-> Void
     ) {
         networkManager.send(
-            model: [UniversitiesListItem].self,
+            model: [UniversityListItemDTO].self,
             endpoint: UniversitiesSearchEndpoint.getUniversities(country: contry)
         ) { response in
             switch response {
