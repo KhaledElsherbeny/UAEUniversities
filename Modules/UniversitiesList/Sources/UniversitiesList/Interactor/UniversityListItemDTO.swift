@@ -6,12 +6,19 @@
 import Foundation
 import Domain
 
+/// DTO (Data Transfer Object) representing a university item.
 struct UniversityListItemDTO: Codable {
+    /// The alpha two code of the country.
     let alphaTwoCode: String
+    /// The name of the university.
     let name: String
+    /// The country where the university is located.
     let country: String
+    /// The domains associated with the university.
     let domains: [String]
+    /// The web pages associated with the university.
     let webPages: [String]
+    /// The state or province where the university is located.
     let stateProvince: String?
     
     private enum CodingKeys: String, CodingKey {

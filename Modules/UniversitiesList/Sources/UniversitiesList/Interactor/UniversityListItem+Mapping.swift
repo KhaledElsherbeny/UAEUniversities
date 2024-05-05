@@ -9,6 +9,9 @@ import Foundation
 import Domain
 
 extension UniversityListItem {
+    /// Initializes a `UniversityListItem` from a `UniversityListItemDTO`.
+    ///
+    /// - Parameter universityListItem: The `UniversityListItemDTO` object.
     init(universityListItem: UniversityListItemDTO) {
         self.init()
         name = universityListItem.name
@@ -21,6 +24,9 @@ extension UniversityListItem {
 }
 
 extension UniversityListItem {
+    /// Initializes a `UniversityListItem` from a `UniversityListItemRealm`.
+    ///
+    /// - Parameter universityListItem: The `UniversityListItemRealm` object.
     init(universityListItem: UniversityListItemRealm) {
         self.init()
         name = universityListItem.name
@@ -31,3 +37,4 @@ extension UniversityListItem {
         stateProvince = universityListItem.stateProvince
     }
 }
+

@@ -8,9 +8,13 @@
 import Foundation
 import NetworkKit
 
+/// Enum representing the endpoints for university search API.
 enum UniversitiesSearchEndpoint: BaseEndpoint {
+    
+    /// Case to get the list of universities based on country.
     case getUniversities(country: String)
     
+    /// The path for the endpoint.
     var path: String {
         switch self {
         case .getUniversities:
@@ -18,6 +22,7 @@ enum UniversitiesSearchEndpoint: BaseEndpoint {
         }
     }
     
+    /// The HTTP method for the endpoint.
     var method: HTTPMethod {
         switch self {
         case .getUniversities:
@@ -25,6 +30,7 @@ enum UniversitiesSearchEndpoint: BaseEndpoint {
         }
     }
     
+    /// The parameters for the endpoint.
     var parameters: Parameters {
         switch self {
         case .getUniversities(let country):
@@ -32,3 +38,4 @@ enum UniversitiesSearchEndpoint: BaseEndpoint {
         }
     }
 }
+
