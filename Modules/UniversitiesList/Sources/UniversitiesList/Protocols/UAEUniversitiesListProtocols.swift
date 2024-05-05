@@ -44,6 +44,7 @@ protocol UniversitiesListPresenterProtocol: AnyObject {
 }
 
 protocol UniversitiesListInteractorOutputProtocol: AnyObject {
+    func didClearUniversitiesList()
     func didSuccessFetchingUniversitiesList(items: [UniversityListItem])
     func didFaildFetchingUniversitiesList(error: Error)
 }

@@ -34,7 +34,7 @@ final class UniversitiesListInteractor: UniversitiesListInteractorInputProtocol 
     
     func refreshUniversitiesList() {
         universitiesListData = []
-        presenter?.didSuccessFetchingUniversitiesList(items: [])
+        presenter?.didClearUniversitiesList()
 
         localDataManager?.clearUniversitiesList(country: countrySearchTerm) { [weak self] result in
             guard let self = self else { return }

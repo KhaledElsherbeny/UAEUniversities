@@ -39,7 +39,7 @@ final public class UniversitiesListView: UIViewController {
 
 extension UniversitiesListView: UniversitiesListViewProtocol {
     func showLoadingView() {
-        LoadingView.stop()
+        LoadingView.start()
     }
     
     func hideLoadingView() {
@@ -47,12 +47,10 @@ extension UniversitiesListView: UniversitiesListViewProtocol {
     }
     
     func updateView() {
-        hideLoadingView()
         tableView.reloadData()
     }
     
     func showError(error: String) {
-        hideLoadingView()
         let alertController = AlertBuilder
             .init(
                 message: error,

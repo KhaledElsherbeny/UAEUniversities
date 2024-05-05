@@ -37,11 +37,23 @@ final class UniversitiesListPresenter: UniversitiesListPresenterProtocol {
 extension UniversitiesListPresenter: UniversitiesListInteractorOutputProtocol  {
     func didSuccessFetchingUniversitiesList(items: [UniversityListItem]) {
         universitiesListUIModel = items.map({ UniversityListItemUIModel(universityListItem: $0) })
+        if items.isEmpty {
+            view?.showEmptyStateView()
+        } else {
+            view?.hideEmptyStateView()
+        }
         view?.updateView()
-        view?.hideEmptyStateView()
+        view?.hideLoadingView()
     }
     
     func didFaildFetchingUniversitiesList(error: Error) {
+        view?.hideLoadingView()
         view?.showError(error: error.localizedDescription)
+    }
+    
+    func didClearUniversitiesList() {
+        universitiesListUIModel.removeAll()
+        view?.hideLoadingView()
+        view?.updateView()
     }
 }

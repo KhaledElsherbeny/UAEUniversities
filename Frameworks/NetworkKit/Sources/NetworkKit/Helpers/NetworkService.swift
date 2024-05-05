@@ -7,18 +7,29 @@
 
 import Foundation
 
+/// Typealias for network request completion handler.
 public typealias NetworkRequestCompletion = (Data?, URLResponse?, Error?) -> Void
 
+/// Protocol defining functionalities for sending network requests.
 protocol NetworkServiceProtocol {
+    /// Sends a network request to the provided endpoint.
+    ///
+    /// - Parameters:
+    ///   - endPoint: The endpoint to send the request to.
+    ///   - completion: The completion handler.
     func sendRequest(
         to endPoint: BaseEndpoint,
         completion: @escaping NetworkRequestCompletion
     )
 }
 
+/// Class responsible for sending network requests.
 final class NetworkService: NetworkServiceProtocol {
     private let networkClient: NetworkServiceProtocol
     
+    /// Initializes the network service with a network client.
+    ///
+    /// - Parameter networkClient: The network client.
     init(networkClient: NetworkServiceProtocol = URLSession(configuration: .default)) {
         self.networkClient = networkClient
     }
@@ -35,6 +46,11 @@ final class NetworkService: NetworkServiceProtocol {
 }
 
 extension URLSession: NetworkServiceProtocol {
+    /// Sends a network request to the provided endpoint using URLSession.
+    ///
+    /// - Parameters:
+    ///   - endPoint: The endpoint to send the request to.
+    ///   - completion: The completion handler.
     func sendRequest(
         to endPoint: BaseEndpoint,
         completion: @escaping NetworkRequestCompletion

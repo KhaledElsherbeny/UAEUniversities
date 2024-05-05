@@ -27,7 +27,7 @@ final class UniversityDetailsPresenter: UniversityDetailsPresenterProtocol, Univ
     }
     
     func didTapRefresh() {
-        delegate?.didRefreshListView()
         wireFrame?.dismiss()
+        delegate?.didRefreshListView()
     }
 }

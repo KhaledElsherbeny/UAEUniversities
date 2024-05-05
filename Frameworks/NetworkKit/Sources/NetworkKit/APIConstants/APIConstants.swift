@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// Constants related to API configurations.
 struct APIConstants {
+    /// Base URL for the API.
     static let baseUrl = "http://universities.hipolabs.com/"
 }

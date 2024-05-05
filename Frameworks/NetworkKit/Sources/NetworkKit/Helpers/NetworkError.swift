@@ -7,17 +7,26 @@
 
 import Foundation
 
+/// Enum defining network error cases.
 public enum NetworkError: Error {
+    /// Authentication error.
     case authenticationError
+    /// Bad request error.
     case badRequest
+    /// Outdated URL error.
     case outdated
+    /// Connection failed error.
     case connectionFailed
+    /// No data error.
     case noData
+    /// Unable to decode response error.
     case unableToDecode
+    /// Server error.
     case serverError
 }
 
 extension NetworkError: LocalizedError {
+    /// Localized description of network error.
     public var errorDescription: String? {
         switch self {
         case .authenticationError:
