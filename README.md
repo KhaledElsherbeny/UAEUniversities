@@ -11,7 +11,7 @@ UAEUniversities is an iOS app that allows users to search for universities by co
 
 - iOS 15.0+
 - Xcode 14.0+
-- Swift 5.3+
+- Swift 5.0+
 
 ## Installation
 
