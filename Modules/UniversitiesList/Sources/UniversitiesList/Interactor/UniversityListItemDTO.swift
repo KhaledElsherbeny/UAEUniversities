@@ -9,17 +9,17 @@ import Domain
 /// DTO (Data Transfer Object) representing a university item.
 struct UniversityListItemDTO: Codable {
     /// The alpha two code of the country.
-    let alphaTwoCode: String
+    var alphaTwoCode: String = ""
     /// The name of the university.
-    let name: String
+    var name: String = ""
     /// The country where the university is located.
-    let country: String
+    var country: String = ""
     /// The domains associated with the university.
-    let domains: [String]
+    var domains: [String] = []
     /// The web pages associated with the university.
-    let webPages: [String]
+    var webPages: [String] = []
     /// The state or province where the university is located.
-    let stateProvince: String?
+    var stateProvince: String?
     
     private enum CodingKeys: String, CodingKey {
         case alphaTwoCode = "alpha_two_code"
@@ -28,5 +28,14 @@ struct UniversityListItemDTO: Codable {
         case domains
         case webPages = "web_pages"
         case stateProvince = "state-province"
+    }
+    
+    init() {
+        alphaTwoCode = ""
+        name = ""
+        country = ""
+        domains = []
+        webPages = []
+        stateProvince = nil
     }
 }

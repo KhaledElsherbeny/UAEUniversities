@@ -49,7 +49,30 @@
 		<key>UAEUniversities.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>2</integer>
+		</dict>
+		<key>UniversitiesListTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>E9335AD52BE5014C00E583E8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E9335AEB2BE5014E00E583E8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E9335AF52BE5014E00E583E8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
