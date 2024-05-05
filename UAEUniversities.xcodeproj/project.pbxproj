@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9011CF82BE7158F0066E23E /* UniversityDetails in Resources */ = {isa = PBXBuildFile; fileRef = E9011CF72BE7158F0066E23E /* UniversityDetails */; };
 		E9335ADA2BE5014C00E583E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9335AD92BE5014C00E583E8 /* AppDelegate.swift */; };
 		E9335ADE2BE5014C00E583E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9335ADD2BE5014C00E583E8 /* ViewController.swift */; };
 		E9335AE12BE5014C00E583E8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E9335AE02BE5014C00E583E8 /* Base */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E9011CF72BE7158F0066E23E /* UniversityDetails */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UniversityDetails; sourceTree = "<group>"; };
 		E9335AD62BE5014C00E583E8 /* UAEUniversities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UAEUniversities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9335AD92BE5014C00E583E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9335ADD2BE5014C00E583E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 		E9F22EFE2BE5CB1D00539B0E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E9011CF72BE7158F0066E23E /* UniversityDetails */,
 				E997DBB92BE713A1000693F7 /* Domain */,
 				E994916B2BE5D1BE004B023A /* UniversitiesList */,
 			);
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9F22E962BE5C71200539B0E /* NetworkKit in Resources */,
+				E9011CF82BE7158F0066E23E /* UniversityDetails in Resources */,
 				E997DBBA2BE713A1000693F7 /* Domain in Resources */,
 				E9335AE32BE5014E00E583E8 /* Assets.xcassets in Resources */,
 				E9F22E972BE5C71200539B0E /* StorageKit in Resources */,
