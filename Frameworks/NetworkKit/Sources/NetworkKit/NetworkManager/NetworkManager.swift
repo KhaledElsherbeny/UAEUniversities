@@ -9,7 +9,7 @@ import Foundation
 
 /// Protocol defining functionalities for sending network requests.
 public protocol NetworkSendableProtocol {
-    /// Sends a network request.
+    /// Sends a network request using a completion handler.
     ///
     /// - Parameters:
     ///   - model: The Codable model to decode the response.
@@ -20,6 +20,18 @@ public protocol NetworkSendableProtocol {
         endpoint: BaseEndpoint,
         completionHandler: @escaping (Result<T, NetworkError>) -> Void
     )
+
+    /// Sends a network request using async/await.
+    ///
+    /// - Parameters:
+    ///   - model: The Codable model to decode the response.
+    ///   - endpoint: The endpoint to send the request to.
+    /// - Returns: The decoded model.
+    /// - Throws: A NetworkError if the request fails or the data cannot be parsed.
+    func send<T: Codable>(
+        model: T.Type,
+        endpoint: BaseEndpoint
+    ) async throws -> T
 }
 
 /// A class responsible for managing network requests.
@@ -45,7 +57,7 @@ public final class NetworkManager {
 }
 
 extension NetworkManager: NetworkSendableProtocol {
-    /// Sends a network request.
+    /// Sends a network request using a completion handler.
     ///
     /// - Parameters:
     ///   - model: The Codable model to decode the response.
@@ -68,6 +80,35 @@ extension NetworkManager: NetworkSendableProtocol {
                 error: error
             )
             completionHandler(result)
+        }
+    }
+    
+    /// Sends a network request using async/await.
+    ///
+    /// - Parameters:
+    ///   - model: The Codable model to decode the response.
+    ///   - endpoint: The endpoint to send the request to.
+    /// - Returns: The decoded model.
+    /// - Throws: A NetworkError if the request fails or the data cannot be parsed.
+    public func send<T: Codable>(
+        model: T.Type,
+        endpoint: BaseEndpoint
+    ) async throws -> T {
+        do {
+            let (data, response) = try await networkService.sendRequest(to: endpoint)
+            return try await parser.handleNetworkResponse(
+                model: model,
+                data: data,
+                response: response,
+                error: nil
+            )
+        } catch {
+            return try await parser.handleNetworkResponse(
+                model: model,
+                data: nil,
+                response: nil,
+                error: error
+            )
         }
     }
 }

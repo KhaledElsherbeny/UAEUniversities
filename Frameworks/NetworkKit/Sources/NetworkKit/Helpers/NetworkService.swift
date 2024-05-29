@@ -99,9 +99,9 @@ extension URLSession: NetworkServiceProtocol {
         to endPoint: BaseEndpoint
     ) async throws -> (Data, URLResponse) {
         let request = endPoint.urlRequest
-        NetworkLogger.log(request: request)
         do {
             let (data, response) = try await data(for: request)
+            NetworkLogger.log(request: request)
             NetworkLogger.log(response: response, data: data)
             return (data, response)
         } catch {

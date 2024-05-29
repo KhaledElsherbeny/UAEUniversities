@@ -32,5 +32,27 @@ final class UniversitiesListAPIDataManager: UniversitiesListAPIDataManagerInputP
                 completion(.failure(error))
             }
         }
+        
+       
+//        Task { [weak self] in
+//            guard let self = self else { return }
+//            do {
+//                let universities = try await self.networkManager.send(
+//                    model: [UniversityListItemDTO].self,
+//                    endpoint: UniversitiesSearchEndpoint.getUniversities(country: country)
+//                )
+//                await MainActor.run {
+//                    completion(.success(universities))
+//                }
+//            } catch {
+//                await MainActor.run {
+//                    if let error = error as? NetworkError {
+//                        completion(.failure(error))
+//                    } else {
+//                        completion(.failure(.connectionFailed))
+//                    }
+//                }
+//            }
+//        }
     }
 }

@@ -52,7 +52,10 @@ final class UniversitiesListLocalDataManager: UniversitiesListLocalDataManagerIn
     /// - Parameters:
     ///   - country: The country for which the list of universities is to be cleared.
     ///   - completion: A closure to be executed when the clear operation finishes. It returns a result indicating whether the operation was successful or a storage database error occurred.
-    func clearUniversitiesList(country: String, completion: @escaping (Result<Bool, StorageDatabaseError>)-> Void) {
+    func clearUniversitiesList(
+        country: String,
+        completion: @escaping (Result<Bool, StorageDatabaseError>)-> Void
+    ) {
         fetchUniversitiesList(country: country) { [weak self] result in
             guard let self = self else { return }
             switch result {
