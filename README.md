@@ -50,3 +50,28 @@ The app follows the VIPER architecture:
 - **University Details**: 
   - Tap on a university to view its details.
   - Swipe left or right to view the next or previous university.
+
+## NetworkKit
+
+NetworkKit is a Swift package used in the UAEUniversities app for handling network requests. It provides functionalities for making network requests synchronously and asynchronously using both closure-based and async/await concurrency patterns.
+
+### Features
+
+- **Closure-based Networking**: Allows making network requests with completion handlers using traditional closure-based patterns.
+- **Async/Await Support**: Supports making network requests using async/await concurrency for more streamlined and readable asynchronous code.
+- **Error Handling**: Provides error handling mechanisms for network requests, including handling different HTTP status codes and network errors.
+
+### Requirements
+
+- Swift 5.0+
+- iOS 15.0+
+- Xcode 14.0+
+
+### Usage
+
+The NetworkKit Swift package can be imported into any Swift project using Swift Package Manager. It provides the following functionalities:
+
+- `sendRequest`: Sends a network request with a completion handler for handling the response asynchronously.
+- `sendRequest`: Sends a network request using async/await concurrency for making asynchronous network calls in modules that support Swift concurrency.
+
+For more information on how to use NetworkKit, refer to the documentation and usage examples in the UAEUniversities project.
