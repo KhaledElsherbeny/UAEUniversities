@@ -16,11 +16,20 @@ protocol NetworkServiceProtocol {
     ///
     /// - Parameters:
     ///   - endPoint: The endpoint to send the request to.
-    ///   - completion: The completion handler.
+    ///   - completion: The completion handler to call when the request is complete.
     func sendRequest(
         to endPoint: BaseEndpoint,
         completion: @escaping NetworkRequestCompletion
     )
+    
+    /// Sends a network request to the provided endpoint using async/await.
+    ///
+    /// - Parameter endPoint: The endpoint to send the request to.
+    /// - Throws: An error if the network request fails.
+    /// - Returns: A tuple containing the data and URL response.
+    func sendRequest(
+        to endPoint: BaseEndpoint
+    ) async throws -> (Data, URLResponse)
 }
 
 /// Class responsible for sending network requests.
@@ -29,19 +38,32 @@ final class NetworkService: NetworkServiceProtocol {
     
     /// Initializes the network service with a network client.
     ///
-    /// - Parameter networkClient: The network client.
+    /// - Parameter networkClient: The network client to use for sending requests.
     init(networkClient: NetworkServiceProtocol = URLSession(configuration: .default)) {
         self.networkClient = networkClient
     }
     
+    /// Sends a network request to the provided endpoint.
+    ///
+    /// - Parameters:
+    ///   - endPoint: The endpoint to send the request to.
+    ///   - completion: The completion handler to call when the request is complete.
     func sendRequest(
         to endPoint: BaseEndpoint,
         completion: @escaping NetworkRequestCompletion
     ) {
-        networkClient.sendRequest(
-            to: endPoint,
-            completion: completion
-        )
+        networkClient.sendRequest(to: endPoint, completion: completion)
+    }
+    
+    /// Sends a network request to the provided endpoint using async/await.
+    ///
+    /// - Parameter endPoint: The endpoint to send the request to.
+    /// - Throws: An error if the network request fails.
+    /// - Returns: A tuple containing the data and URL response.
+    func sendRequest(
+        to endPoint: BaseEndpoint
+    ) async throws -> (Data, URLResponse) {
+        try await networkClient.sendRequest(to: endPoint)
     }
 }
 
@@ -50,7 +72,7 @@ extension URLSession: NetworkServiceProtocol {
     ///
     /// - Parameters:
     ///   - endPoint: The endpoint to send the request to.
-    ///   - completion: The completion handler.
+    ///   - completion: The completion handler to call when the request is complete.
     func sendRequest(
         to endPoint: BaseEndpoint,
         completion: @escaping NetworkRequestCompletion
@@ -60,8 +82,31 @@ extension URLSession: NetworkServiceProtocol {
             DispatchQueue.main.async {
                 NetworkLogger.log(request: request)
                 completion(data, response, error)
-                NetworkLogger.log(response: data)
+                NetworkLogger.log(response: response, data: data)
+                if let error = error {
+                    NetworkLogger.log(error: error)
+                }
             }
         }.resume()
+    }
+    
+    /// Sends a network request to the provided endpoint using async/await and logs the request and response.
+    ///
+    /// - Parameter endPoint: The endpoint to send the request to.
+    /// - Throws: An error if the network request fails.
+    /// - Returns: A tuple containing the data and URL response.
+    func sendRequest(
+        to endPoint: BaseEndpoint
+    ) async throws -> (Data, URLResponse) {
+        let request = endPoint.urlRequest
+        NetworkLogger.log(request: request)
+        do {
+            let (data, response) = try await data(for: request)
+            NetworkLogger.log(response: response, data: data)
+            return (data, response)
+        } catch {
+            NetworkLogger.log(error: error)
+            throw error
+        }
     }
 }

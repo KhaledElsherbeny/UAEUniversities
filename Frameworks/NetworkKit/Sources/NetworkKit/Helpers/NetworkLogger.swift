@@ -7,46 +7,42 @@
 
 import Foundation
 
-/// Class responsible for logging network requests and responses.
-final class NetworkLogger {
-    /// Logs the outgoing network request.
+/// Utility class for logging network requests and responses.
+class NetworkLogger {
+    /// Logs a network request.
     ///
-    /// - Parameter request: The URL request.
+    /// - Parameter request: The network request to be logged.
     static func log(request: URLRequest) {
-        print("\n - - - - - - - - - - OUTGOING - - - - - - - - - - \n")
-        defer { print("\n - - - - - - - - - -  END - - - - - - - - - - \n") }
-        
-        let urlAsString = request.url?.absoluteString ?? ""
-        let urlComponents = NSURLComponents(string: urlAsString)
-        
-        let method = request.httpMethod != nil ? "\(request.httpMethod ?? "")" : ""
-        let path = "\(urlComponents?.path ?? "")"
-        let query = "\(urlComponents?.query ?? "")"
-        let host = "\(urlComponents?.host ?? "")"
-        
-        var logOutput = """
-                        \(urlAsString) \n\n
-                        \(method) \(path)?\(query) HTTP/1.1 \n
-                        HOST: \(host)\n
-                        """
-        for (key,value) in request.allHTTPHeaderFields ?? [:] {
-            logOutput += "\(key): \(value) \n"
+        print("Request: \(request)")
+        if let headers = request.allHTTPHeaderFields {
+            print("Headers: \(headers)")
         }
         if let body = request.httpBody {
-            logOutput += "\n \(String(data: body, encoding: .utf8) ?? "")"
+            print("Body: \(String(decoding: body, as: UTF8.self))")
         }
-        
-        print(logOutput)
     }
     
-    /// Logs the network response.
+    /// Logs a network response and its data.
     ///
-    /// - Parameter response: The response data.
-    static func log(response: Data?) {
-        guard let data = response else {
-            return
+    /// - Parameters:
+    ///   - response: The network response to be logged.
+    ///   - data: The data received from the network response.
+    static func log(response: URLResponse?, data: Data?) {
+        if let httpResponse = response as? HTTPURLResponse {
+            print("Response: \(httpResponse)")
+            if let headers = httpResponse.allHeaderFields as? [String: Any] {
+                print("Headers: \(headers)")
+            }
         }
-        let logOutput = "\n \(String(data: data, encoding: .utf8) ?? "") \n"
-        print(logOutput)
+        if let data = data, let responseBody = String(data: data, encoding: .utf8) {
+            print("Response Body: \(responseBody)")
+        }
+    }
+    
+    /// Logs an error that occurred during a network request.
+    ///
+    /// - Parameter error: The error to be logged.
+    static func log(error: Error) {
+        print("Error: \(error)")
     }
 }
